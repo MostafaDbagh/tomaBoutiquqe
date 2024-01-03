@@ -1,0 +1,95 @@
+
+
+.inputRow{
+    display: flex;
+    align-items: center;
+    min-height: 100px;
+    width: 96%;
+    margin: 0 auto 32px;
+}
+
+
+.inputContainer{
+    position: relative;
+   margin: 12px ;
+   width: 350px;
+
+}
+
+.addProductInput{
+    min-width: 330px;
+    height: 54px ;
+    padding: 12px 16px;
+    margin: 8px 0;
+    border-radius: 4px;
+    outline: 0;
+    color: #212529;
+    font-family: lato;
+    border:0;
+    box-shadow: 0 1px 3px 0 rgba(31, 38, 38, 0.37);
+    border-radius: 10px
+}
+.errorMessage{
+    position: absolute;
+    bottom: -20px;
+    color: red;
+}
+th{
+    min-width: 120px;
+    text-align: center;
+    font-family: lato;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 12px 6px;
+    height: 50px;
+    line-height: 50px;
+
+}
+td{
+    text-align: center;
+    padding: 12px 6px;
+    height: 60px;
+    line-height: 60px;
+ }
+ img:hover{
+  cursor: pointer;
+ }
+
+ .login-form {
+    margin: auto;
+    padding: 20px;
+  }
+  
+  .input-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .submit-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .submit-button:hover {
+    background-color: #0056b3;
+  }
+
+  .bgPink{
+    background-color: #FBA1B7 !important;
+  }

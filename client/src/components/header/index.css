@@ -1,0 +1,16 @@
+.nav-link{
+    color: white !important;
+    font-family: lato;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+}
+.nav-link:not(.last-item):hover.nav-link::after {
+     position: absolute;
+     content: '';
+     width: 50%;
+     height: 2px;
+     background: #fff;
+     top: 40px;
+     left: 20px;
+}

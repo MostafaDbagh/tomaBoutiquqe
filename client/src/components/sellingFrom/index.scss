@@ -1,0 +1,105 @@
+.sell-container{
+    width:98%;
+    margin:0 ;
+    display:flex;
+    flex-direction:row-reverse;
+
+    @media (max-width:786px) {
+        flex-direction: column-reverse;
+    }
+
+.input-container{
+    display: flex;
+    flex-direction: column;
+    label{
+        margin-left: 16px;
+    }
+    input{
+        width: 350px;
+        padding:24px 12px ;
+        height: 48px;
+        outline: 0;
+        background-color:  transparent;
+        margin:6px  12px 24px;
+        border: 1px solid  #ccc;
+         color: black;
+        &::placeholder{
+            color:black ;
+            font-size: 12px;
+        }
+    }
+}
+}
+.input-textArea{
+    width: 350px;
+    height: 120px;
+    padding:32px 16px;
+    border: 0;
+    outline: 0;
+    background-color:  transparent;
+    margin:24px  12px 24px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+
+    &::placeholder{
+        color: black;
+        font-size: 12px;
+    }
+}
+.btn-submit{
+    width: 350px;
+    height: 60px;
+  padding: 12px;
+    margin: 12px;
+    background-color:rgb(39, 200, 163) ;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+}
+.steps{
+    width: 40%;
+    margin:16px ;
+    color:white;
+    background-color: #6C757D;
+    border-radius: 15px;
+    margin: 0 auto;
+
+    @media (max-width:786px) {
+        width: 94%;
+        margin-bottom: 32px;
+    }
+ h2{
+    margin: 32px;
+ }
+    ul{
+        margin: 0;
+        padding: 0;
+        li{
+            padding: 12px 0 16px 16px;
+            list-style: none;
+            font-size: 16px;
+        }
+    }
+}
+.Dropdown-control{
+    width: 350px !important;
+    height: 48px !important;
+
+    margin: 6px 12px 0 !important;
+}
+.Dropdown-menu{
+    margin: 6px 12px 0 !important;
+
+}
+.input-row {
+    display: flex;
+    flex-direction: row;
+    @media (max-width:786px) {
+        flex-direction: column;
+    }
+}
+.form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
