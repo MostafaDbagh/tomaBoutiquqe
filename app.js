@@ -29,8 +29,8 @@ app.use("/",contactSupportApi)
 
 
 app.use('/uploads',express.static(path.join(__dirname, 'uploads')));
-app.use((req,res,next)=>{
 
+app.use((req,res,next)=>{
   const errorObj = {
     message:'not Found',
     status:404
