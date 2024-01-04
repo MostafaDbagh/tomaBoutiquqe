@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.3412a3f5.css",
+    "main.js": "/static/js/main.db8fe849.js",
+    "static/media/logo.png": "/static/media/logo.44839a234b943bfe4262.png",
+    "static/media/delete-svgrepo-com .svg": "/static/media/delete-svgrepo-com .800bc0921786bc6d43b194d6c2d82aa3.svg",
+    "static/media/view.svg": "/static/media/view.f9400441403355dae2aa89034957fa21.svg",
+    "static/media/basket.svg": "/static/media/basket.f1a09befa2b4efd37f0ebc807568c27d.svg",
+    "static/media/edit.svg": "/static/media/edit.cec0357d22a1275c4f713882fd5f8cfd.svg",
+    "static/media/whatsapp.svg": "/static/media/whatsapp.bf3b25c50fc3cdd0529804256340d9e1.svg",
+    "static/media/eye-svgrepo-com.svg": "/static/media/eye-svgrepo-com.d744507789beecf286a22f1f5335fffa.svg",
+    "static/media/heart.svg": "/static/media/heart.9c5ac6e034c4c79ec9ccc321060d6ffb.svg",
+    "index.html": "/index.html",
+    "static/media/instagram.svg": "/static/media/instagram.9a1c194ef500efcecb27111661eaef23.svg",
+    "static/media/envelop.svg": "/static/media/envelop.59ce41d44e1592cc4b3bd9c34e883dc1.svg",
+    "static/media/whiteBasket.svg": "/static/media/whiteBasket.87a40ad32dc1b6848de522ed18038de8.svg",
+    "static/media/facebook.svg": "/static/media/facebook.d00acf1c4cfb15f7476db7ad30011437.svg",
+    "main.3412a3f5.css.map": "/static/css/main.3412a3f5.css.map",
+    "main.db8fe849.js.map": "/static/js/main.db8fe849.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3412a3f5.css",
+    "static/js/main.db8fe849.js"
+  ]
+}
