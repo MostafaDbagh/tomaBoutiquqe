@@ -9,6 +9,9 @@
     border: none;
     outline: 0;
     padding: 24px  ;
+    @media(max-width:786px) {
+        width: 225px;
+    }
 }
 
 .subscribeInput::placeholder{
@@ -27,4 +30,21 @@ font-weight: bold;
     outline: 0;
     padding: 12px 24px  ;
     font-size: 18px;
+    @media(max-width:786px) {
+        width: 110px;
+    }
+}
+.subscribeSectionTitle{
+    font-size:36px;
+    margin:32px auto;
+    @media(max-width:786px) {
+        font-size: 24px;
+        margin: 16px auto;
+    }
+}
+.subscribtionSectionSubTitle{
+    font-size: 18px;
+    @media(max-width:786px) {
+        font-size: 14px;
+    }
 }

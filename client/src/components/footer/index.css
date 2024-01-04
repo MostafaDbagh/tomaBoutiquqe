@@ -36,3 +36,9 @@ li:hover{
     transition: all .4s ease-in;
     cursor: pointer;
 }
+
+.footerText{
+    @media (max-width:786px) {
+        font-size: 14px;
+    }
+}

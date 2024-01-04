@@ -64,7 +64,7 @@ const Footer = () => {
     </div>
   
         <div style={{width:'98%',height:'50px',textAlign:'center',background:'#fba1b7',color:'white',lineHeight:'50px',margin:'0 auto 8px',borderRadius:'24px'}}>
-           <p> All Right reserved  Design by <span style={{color:'#E80f88'}}>Mostafa Dbagh</span></p>
+           <p className='footerText'> All Right reserved  Design by <span style={{color:'#E80f88'}}>Mostafa Dbagh</span></p>
         </div>
         </>
     );

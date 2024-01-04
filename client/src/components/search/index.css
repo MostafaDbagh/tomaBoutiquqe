@@ -1,0 +1,38 @@
+
+
+.logoSection{
+    width: 300px;
+    padding: 0 32px;
+    @media (max-width:786px) {
+         width: 100%;;
+         display: flex;
+         justify-content: center;
+    }
+}
+.searchSection{
+    padding:32px;
+    @media (max-width:786px) {
+        max-width: 100%;;
+        display: flex;
+        justify-content: center;
+   }
+}
+.searchForm{
+    @media (max-width:786px) {
+      justify-content: center;
+      gap: 12px;
+   }
+}
+.responsiveInput{
+    @media (max-width:786px) {
+        width: 320px !important;
+
+     }
+}
+.responsiveButton{
+    @media (max-width:786px) {
+        width: 100%;
+        margin: 12px auto 12px;
+
+     }
+}

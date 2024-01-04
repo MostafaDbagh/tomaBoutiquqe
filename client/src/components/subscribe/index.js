@@ -20,12 +20,12 @@ const Subscribe = () => {
 
         
         }}>
-            <h3 style={{fontFamily:'oswald',fontSize:'36px',padding:'12px',margin:'32px auto'}}>SUBSCRIBE TO NEWSLETTER</h3>
+            <p className='subscribeSectionTitle' style={{fontFamily:'oswald',padding:'12px'}}>SUBSCRIBE TO NEWSLETTER</p>
             <div className='d-flex justify-content-cetner align-items-center px-3 py-1'>
                 <input className='subscribeInput' onChange={(e)=>setSubscribeEmail(e.target.value)} type="text" placeholder="Type your Email Address" id="emailAddressSubscribe" />
                 <button className='subscribeButton' onClick={()=>console.log('hi')}>Subscribe</button>
             </div>
-            <p style={{fontFamily:'oswald',padding:'12px',fontSize:'18px'}}>We gonna send you Email once a month</p>
+            <p className='subscribtionSectionSubTitle' style={{fontFamily:'oswald',padding:'12px'}}>We gonna send you Email once a month</p>
         </div>
      );
 }
