@@ -12,7 +12,7 @@ function Header({setShowPorductsModal}) {
     return product.reduce((acc,curr) => acc + curr.quantity,0)
   }
   return (
-    <Navbar collapseOnSelect expand="lg" style={{height:'90px',width:'99%',margin:'4px auto',borderRadius:'10px',color:'white',
+    <Navbar collapseOnSelect expand="lg" style={{minHeight:'90px',width:'99%',margin:'4px auto',borderRadius:'10px',color:'white',
   
     background: " #f39fdc "
 

@@ -11,8 +11,8 @@ const Footer = () => {
     return (  
 
         <>
-        <div className=" p-5" style={{width:'98%',margin:'32px auto 8px',borderRadius:'24px',background:'#ffd1da'}}>
-      <div className="d-flex justify-content-between align-items-center ">
+        <div className=" px-3 py-5" style={{width:'98%',margin:'32px auto 8px',borderRadius:'24px',background:'#ffd1da'}}>
+      <div className="socialMediaSection">
 
         <div className="socialMedia   px-5 pt-5" style={{background:'#f8f9fa',borderRadius:'4px',height:'100%'}}>
           <img src={logo} alt="highquickAction" width='260' height='100' />
