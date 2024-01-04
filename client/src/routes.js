@@ -22,14 +22,14 @@ return(
 <Layout setSearch={setSearch}>
     <Routes>
    <Route exact path="/" element={<Home search={search} setSearch={setSearch}/>}/>
-   <Route exact path="/product/:id" element={<ProductId/>}/>
-   <Route exact path="/termsandcondition" element={<TermsAndCondition/>}/>
-   <Route exact path="/privacyandpolicy" element={<PrivacyAndPolicy/>}/>
-   <Route exact path="/aboutus" element={<AboutUS/>}/>
-   <Route exact path="/cart" element={<Cart/>}/>
-   <Route exact path="/admin" element={<AdminLogin/>}/>
+   <Route  path="/product/:id" element={<ProductId/>}/>
+   <Route  path="/termsandcondition" element={<TermsAndCondition/>}/>
+   <Route  path="/privacyandpolicy" element={<PrivacyAndPolicy/>}/>
+   <Route  path="/aboutus" element={<AboutUS/>}/>
+   <Route  path="/cart" element={<Cart/>}/>
+   <Route  path="/admin" element={<AdminLogin/>}/>
    
-   <Route exact path="/admin/products" element={isAuth ?<ProductsAdmin search={search}/>:<Home search={search} setSearch={setSearch}/>}/>
+   <Route  path="/admin/products" element={isAuth ?<ProductsAdmin search={search}/>:<Home search={search} setSearch={setSearch}/>}/>
    <Route path="/admin/locations" element={isAuth ?<Location search={search}/>:<Home search={search} setSearch={setSearch}/>}/> 
    <Route path="/admin/addProduct" element={isAuth ?<ProductForm/>:<Home search={search} setSearch={setSearch}/>}/>
    <Route path="/admin/orders" element={isAuth?<Orders search={search}/>:<Home search={search} setSearch={setSearch}/>}/>
