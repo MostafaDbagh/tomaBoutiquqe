@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
-mongoURI='mongodb+srv://safi:35064612@cluster0-ags3s.mongodb.net/ecommerce?retryWrites=true&w=majority';
+mongoURI='mongodb+srv://safi:35064612@cluster0-ags3s.mongodb.net/TomaBoutique?retryWrites=true&w=majority';
 
-mongoose.connect('mongodb://127.0.0.1:27017/productDb',{useNewUrlParser:true,useUnifiedTopology: true})
+mongoose.connect(mongoURI,{useNewUrlParser:true,useUnifiedTopology: true})
 const conn = mongoose.connection;
 
 conn.on('connected',()=>{
