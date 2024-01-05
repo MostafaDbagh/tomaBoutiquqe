@@ -12,3 +12,25 @@
 
 
   }
+  .blurry-section{
+    margin: 16px auto;
+    @media (max-width:786px) {
+      margin: 0 auto;
+    }
+  }
+  .cardMargin{
+    width: 340px;
+    margin: 48px;
+    @media (max-width:786px) {
+      margin: 16px auto;
+      width: 300px;
+    }
+  }
+  .flexBetween{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    @media (max-width:'786px') {
+      display: block;
+    }
+  }
