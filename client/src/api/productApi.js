@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export const Axios = axios.create({
-    baseURL: 'http://localhost:4060/', 
+    baseURL: 'https://toma-boutique-bc4536360c89.herokuapp.com/', 
     timeout: 5000, // Request timeout in milliseconds
     headers: {
       'Authorization': 'Bearer YourAccessToken', // Custom headers
