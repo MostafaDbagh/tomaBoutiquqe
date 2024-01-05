@@ -16,7 +16,7 @@ export const Search = ({setSearch}) => {
                     setSearch(e.target.value)
                 }}  />
             </div>
-            <button type="submit" className="btn btn-dark mx-2 responsiveButton " style={{background:"#fba1b7",fontFamily:'lato',border:0,maxHeight:'45px',margin:'auto 0',height:'46px'}}>Search</button>
+            <button type="submit" className="btn btn-dark mx-2 responsiveButton " style={{background:"#fba1b7",fontFamily:'lato',border:0,maxHeight:'45px',height:'46px'}}>Search</button>
         </form>
         </div>
         </div>
