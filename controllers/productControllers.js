@@ -17,12 +17,12 @@ const s3 = new AWS.S3({
 });
 
 const  addImageIntoS3= async (file) =>{
+    console.log(file,'file')
     const uploadParams ={
        Bucket: bucketName,
        Body:  file.buffer,
-       Key:file.fieldname ,
+       Key:file.originalname ,
     }
-    console.log(uploadParams,'upload params')
     return s3.upload(uploadParams).promise()
     
 }
@@ -38,6 +38,7 @@ const addProduct = async (req, res,next) => {
     }
 
     const resultUploadIntoS3 = await addImageIntoS3(file);
+    console.log(resultUploadIntoS3,'result to s3')
     const product = new productSchema({...body,product_image:resultUploadIntoS3.key})
     if (!product) {
         return res.status(400).json({ success: false, error: err })
@@ -84,7 +85,6 @@ const getProducts = async (req, res) => {
 const getProductById = async (req, res) => {
     const { id } = req.params;
     await productSchema.find({product_id:id }).then(data => {
-        console.log(data)
         res.status(200).json({
             data:data[0],
             message: 'productId fetch successfully'

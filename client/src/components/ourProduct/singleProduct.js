@@ -12,6 +12,7 @@ const SingleProduct = ({  productPrice, productName,productImage,productId }) =>
     }
     return (
         <>
+        {console.log(productImage,'productImage')}
         <div className="card m-5  border-0  rounded-0 bg-.bg-secondary shadow" style={{ width: '340px'}} >
             <div className="mt-4">
             <div className="blurry-section" style={{width:'280px',height:'140px',background:'#fff0f5',position:'relative',margin:'16px auto',borderRadius:'10px'}}>
