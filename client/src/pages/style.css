@@ -57,3 +57,22 @@ input[type=number] {
     .my-3{
         margin: 32px auto;
     }
+    .flexCenter{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .mobileSize{
+      @media (max-width:786px) {
+        text-align: center;
+      }
+    }
+    .center{
+      @media (max-width:786px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }

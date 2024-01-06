@@ -30,7 +30,7 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    @media (max-width:'786px') {
+    @media (max-width:786px) {
       display: block;
     }
   }

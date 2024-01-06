@@ -9,12 +9,12 @@ import Imagecarousel from "../components/slidder/imagecarousel";
 import { useDispatch, useSelector } from "react-redux";
 import { addProduct } from "../redux/reducer/productReducer";
 import "./style.css";
-import LocationForm from "../components/forms/addLocationForm";
-
+import { useNavigate } from "react-router-dom";
 
 
 export const ProductId = () => {
   const {id} = useParams();
+  const navigate = useNavigate();
 
   const dispatch = useDispatch()
   const product  = useSelector(state =>state.product)
@@ -54,27 +54,26 @@ export const ProductId = () => {
   }
   return (
     <div>
-      <div className="d-flex justify-content-center align-items-center my-3">
-        <div style={{ width: "54%",margin:'0 auto' }}>
+      <div className="flexCenter my-3">
+        <div style={{ margin:'0 auto' ,width:'700px'}}>
           <img
             src={`http://baby-bucket-product.s3.amazonaws.com/${currentProduct["product_image"]}`}
             alt="productImage"
             width={"100%"}
             height={450}
             style={{
-              margin: "0 auto",
+              margin: "0 auto 32px",
               borderRadius: "24px",
-              paddingRight: "32px",
               
             }}
           />
         </div>
         <div
-          style={{ width: "40%", minHeight: "100%" }}
-          className="productRightSection p-3"
+          style={{ minHeight: "100%",width:'570px' }}
+          className="productRightSection p-3 mobileSize"
         >
           <h4>{currentProduct.product_description} </h4>
-          <div className="d-flex align-items-center py-2 mb-3 mt-1"style={{fontFamily:'alto,sans-serif'}}>
+          <div className="d-flex align-items-center py-2 mb-3 mt-1 center"style={{fontFamily:'alto,sans-serif'}}>
             <p style={{ color: "#E10600" }} className="m-0">
               <span className="mx-1">Dhs.</span>
               <s>{currentProduct.product_old_price}</s>{" "}
@@ -110,7 +109,7 @@ export const ProductId = () => {
                 name="quantity"
                 className="modern-input"
                 value={quantity}
-                style={{width:"60px"}}
+                style={{width:"60px",textAlign:'center'}}
               />
               <button className="spin" style={{ background: "#27c8a3" }} onClick={()=>handleIncrement()}>
                 +
@@ -124,7 +123,7 @@ export const ProductId = () => {
             <button className="buyNow d-flex justify-content-center align-items-center " onClick={()=>addProductToBasket()}>Add To Cart <img src={basket} alt='toma-ecomerce' width={30} height={30} style={{marginLeft:'6px'}}/></button>
           </div>
           <div className="mb-3">
-            <button className="buyNow" style={{background:'#27c8a3'}}>Buy it Now <img src={heart} alt='toma-ecomerce' width={30} height={30} style={{marginleft:'6px'}}/></button>
+            <button className="buyNow" style={{background:'#27c8a3'}} onClick={()=>{navigate('/cart')}}>Buy it Now <img src={heart} alt='toma-ecomerce' width={30} height={30} style={{marginleft:'6px'}}/></button>
           </div>
           <div>
             <p><img src={eye} alt="toma-store" style={{marginRight:'8px',fontFamily:'alot,sans-serif'}}/>200 customers are viewing this product</p>

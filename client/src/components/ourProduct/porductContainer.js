@@ -54,7 +54,7 @@ useEffect( ()=>{
            <div className=" position-relative">
            <SectionTitle title='Our Products'/>
 
-           <div className="flex-between">
+           <div className="flexBetween">
            {prodcuts?.map((product) => (
              <div className="m-2 rounded-2" key={product._id}>
 
