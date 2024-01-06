@@ -36,7 +36,7 @@ const validationSchema = Yup.object().shape({
     
 const LocationForm = ({setIsLocationSubmited,orderIdState}) => {
   const handleSubmit = async(values, { setSubmitting }) => {
-     const data = {...values,location_id:orderIdState}
+     const data = {...values,location_id:orderIdState+1}
     const res  = await sendLocation(data)
       setIsLocationSubmited(true)
       }
