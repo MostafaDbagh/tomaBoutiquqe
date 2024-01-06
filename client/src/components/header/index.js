@@ -26,7 +26,7 @@ function Header({setShowPorductsModal}) {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto" style={{fontSize:'18px'}}>
-            <Nav.Link href="#features" className='px-4'>Home</Nav.Link>
+            <Nav.Link href="/" className='px-4'>Home</Nav.Link>
             <Nav.Link href="#pricing" className='px-4'>clothes</Nav.Link>
             <Nav.Link href="#pricing" className='px-4'>Toys</Nav.Link>
             <Nav.Link href="#pricing"className='px-4'>Feeding</Nav.Link>

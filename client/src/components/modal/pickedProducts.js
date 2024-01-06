@@ -71,6 +71,7 @@ const MyModal = ({ showProductsModal, setShowPorductsModal:handleClose }) => {
         variant="primary bgPink border-0" 
         onClick={()=>{
           navigate('/cart')
+          handleClose(false)
         }} >
           Go To Cart
         </Button>
