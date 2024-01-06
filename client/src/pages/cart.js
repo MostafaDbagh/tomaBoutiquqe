@@ -15,7 +15,7 @@ const Cart = () => {
       }
       const reduceProductNumber = (product) =>{
         dispatch(reduceProduct(product))
-        toast.error('🦄 Wow so easy!', {
+        toast.error('you delete item successfully', {
           position: "bottom-right",
           autoClose: 5000,
           hideProgressBar: false,
@@ -79,13 +79,13 @@ const Cart = () => {
         <div>
 <p className="text-center"style={{fontFamily:'oswald',fontSize:'38px',}}>Checkout </p>
      
-        <div className="d-flex ">
+        <div className="cart">
 
-                  <div className=" " style={{width:'56%'}}>
+       <div>
         <LocationForm/>
-
         </div>
-        <div className="w-50 p-3 " >
+
+        <div className=" p-3 " >
             <p className="text-center my-4" style={{fontFamily:'oswald',fontSize:'34px'}}>Order Summary</p>
           {productNumber() !== 0  && product.map(product =>
   {

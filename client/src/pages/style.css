@@ -84,3 +84,10 @@ input[type=number] {
         align-items: center;
       }
     }
+.cart{
+  display: flex;
+  flex-wrap: wrap;
+  @media (max-width:786px) {
+    flex-direction: column-reverse;
+  }
+}

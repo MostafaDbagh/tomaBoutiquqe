@@ -2,7 +2,7 @@ import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { sendLocation } from '../../api/productApi';
 import * as Yup from 'yup'
-
+import './index.css'
 const categoryOptions = [
     { value: 'electronics', label: 'Electronics' },
     { value: 'clothing', label: 'Clothing' },
@@ -48,9 +48,9 @@ const LocationForm = () => (
       enableReinitialize={true} 
     >
       {({ isSubmitting,setFieldValue }) => (
-        <Form className='d-flex justify-content-center align-items-center flex-column w-75  mx-auto' >
+        <Form className='d-flex justify-content-center align-items-center flex-column  mx-auto' >
         <p className='p-3 ' style={{fontSize:'34px',fontFamily:'oswald',borderBottom:'3px solid #ffd1da'}}>Billing & Shipping</p>
-<div className='d-flex p-3'>
+<div className=' locationInputContainer p-3'>
           <div  className='inputContainer '>
             <label htmlFor="customer_location_first_name">First Name:</label>
             <Field type="text" name="customer_location_first_name" className='addProductInput' />
@@ -65,7 +65,7 @@ const LocationForm = () => (
           </div>
 
  
-          <div className='d-flex p-3'>
+          <div className='locationInputContainer p-3'>
 
           <div  className='inputContainer'>
             <label htmlFor="customer_location_country">Country/Region:</label>
@@ -88,7 +88,7 @@ const LocationForm = () => (
             <ErrorMessage name="customer_location_city" component="div" className='errorMessage'  />
           </div>
 </div>
-<div className='d-flex p-3'>
+<div className='locationInputContainer p-3'>
           <div  className='inputContainer'>
             <label htmlFor="customer_location_district">District:</label>
             <Field type="text" name="customer_location_district" className='addProductInput'/>
@@ -103,7 +103,7 @@ const LocationForm = () => (
 </div>
     
           
-          <div className='d-flex'>
+          <div className=' locationInputContainer'>
 
 <div  className='inputContainer'>
   <label htmlFor="customer_location_phone">Phone Number</label>

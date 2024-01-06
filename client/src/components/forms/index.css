@@ -1,0 +1,7 @@
+.locationInputContainer{
+    display: flex;
+    flex-direction: row;
+    @media (max-width:786px) {
+        flex-direction: column;
+    }
+}
