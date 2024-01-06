@@ -77,6 +77,7 @@ const Cart = () => {
     return ( 
 
         <div>
+          {console.log(product,'product')}
 <p className="text-center"style={{fontFamily:'oswald',fontSize:'38px',}}>Checkout </p>
      
         <div className="cart">
@@ -87,7 +88,8 @@ const Cart = () => {
 
         <div className=" p-3 " >
             <p className="text-center my-4" style={{fontFamily:'oswald',fontSize:'34px'}}>Order Summary</p>
-          {productNumber() !== 0  && product.map(product =>
+            {console.log(productNumber())}
+    {productNumber() !== 0  && product.map(product =>
   {
     return(
       product.quantity > 0 &&
