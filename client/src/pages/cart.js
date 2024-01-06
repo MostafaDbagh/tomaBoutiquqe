@@ -72,7 +72,13 @@ const Cart = () => {
       
        }
         
-       const res =  await makeOrder(data);
+       const res =  await makeOrder(data).then(res =>{
+        if(res){
+          localStorage.clear();
+          setIsLocationSubmited(false)
+
+        }
+       })
 
       }
     return ( 
@@ -115,7 +121,7 @@ const Cart = () => {
         <div>
         <LocationForm setIsLocationSubmited={setIsLocationSubmited}/>
         </div>
-        <button disabled={!isLocaitonSubmited} onClick={()=>handleMakeOrder()}style={{fontFamily:'lato',minWidth:'300px'}}  className='btn btn-primary btn-lg mx-auto my-5 bgPink border-0'>Make it order</button>
+        <button disabled={!isLocaitonSubmited} onClick={()=>handleMakeOrder()}style={{fontFamily:'lato',minWidth:'300px'}}  className='btn btn-primary btn-lg mx-auto my-5 bgPink border-0'>Submit your order</button>
 
         </div>
         </div>
