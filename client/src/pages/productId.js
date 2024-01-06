@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addProduct } from "../redux/reducer/productReducer";
 import "./style.css";
 import { useNavigate } from "react-router-dom";
-
+import { ToastContainer,toast } from 'react-toastify';
 
 export const ProductId = () => {
   const {id} = useParams();
@@ -51,9 +51,22 @@ export const ProductId = () => {
   const addProductToBasket = () =>{
     const {product_price:productPrice,product_image:productImage,product_name:productName,product_id:id} = currentProduct;
           dispatch(addProduct({productPrice,productImage,productName,id,quantity}))
+          toast.success('we add this produt to your basket!', {
+            position: "bottom-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            });
+
   }
   return (
+
     <div>
+
       <div className="flexCenter my-3">
         <div style={{ margin:'0 auto' ,width:'700px'}}>
           <img
@@ -132,5 +145,6 @@ export const ProductId = () => {
       </div>
     <  Imagecarousel   /> 
     </div>
+
   );
 };
