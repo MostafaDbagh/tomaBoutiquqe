@@ -8,6 +8,7 @@ import { ToastContainer,toast } from 'react-toastify';
 import { getNextOrederId,makeOrder } from "../api/productApi";
 const Cart = () => {
     const [orderIdState,setOrderIdState] = useState('')
+    const [isLocaitonSubmited,setIsLocationSubmited] = useState(false)
     const product = useSelector(state => state.product)
     const dispatch = useDispatch()
     const productNumber =() => {
@@ -77,23 +78,19 @@ const Cart = () => {
     return ( 
 
         <div>
-          {console.log(product,'product')}
 <p className="text-center"style={{fontFamily:'oswald',fontSize:'38px',}}>Checkout </p>
      
         <div className="cart">
 
-       <div>
-        <LocationForm/>
-        </div>
+     
 
-        <div className=" p-3 " >
+        <div className="p-3 " style={{width:"100%",position:'relative'}} >
             <p className="text-center my-4" style={{fontFamily:'oswald',fontSize:'34px'}}>Order Summary</p>
-            {console.log(productNumber())}
     {productNumber() !== 0  && product.map(product =>
   {
     return(
       product.quantity > 0 &&
-      <div key={product.productImage} className='d-flex align-items-center justify-content-around my-2' style={{maxHeight:'100px',fontFamily:'lato'}}>
+      <div key={product.productImage} className='d-flex align-items-center justify-content-around my-2  shadow-sm' style={{maxHeight:'100px',fontFamily:'lato',width:"96%"}}>
       <div  style={{background:'#f6f6f6',position:'relative',margin:'16px 0'}}>
      <img src={`http://baby-bucket-product.s3.amazonaws.com/${product['rest'].productImage}`} 
      alt="productImage" 
@@ -102,10 +99,10 @@ const Cart = () => {
      style={{borderRadius:'50%'}}
      />
      </div>
-     <p className='my-0 mx-3 w-25 text-center'>{product['rest'].productName}</p>
+     <p className='my-0 mx-3  text-center'>{product['rest'].productName}</p>
      <p className='my-0 mx-3 '>{product['rest'].productPrice}</p>
      <p className='my-0 mx-3'>{product.quantity}</p>
-     <p className='my-0 mx-3'>{product.totalAmount}</p>
+     {/* <p className='my-0 mx-3'>{product.totalAmount}</p> */}
      <p className='m-0 ' onClick={()=>reduceProductNumber(product)} >
     <img src={Delete} alt='toma-boutique' width={40} height={40}/>
      </p>
@@ -113,10 +110,13 @@ const Cart = () => {
 
     )}
 )}
-     <button onClick={()=>handleMakeOrder()}>Make it order</button>
 
         </div>
-  
+        <div>
+        <LocationForm setIsLocationSubmited={setIsLocationSubmited}/>
+        </div>
+        <button disabled={!isLocaitonSubmited} onClick={()=>handleMakeOrder()}style={{fontFamily:'lato',minWidth:'300px'}}  className='btn btn-primary btn-lg mx-auto my-5 bgPink border-0'>Make it order</button>
+
         </div>
         </div>
      );

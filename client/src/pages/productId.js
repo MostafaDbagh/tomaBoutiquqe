@@ -136,7 +136,7 @@ export const ProductId = () => {
             <button className="buyNow d-flex justify-content-center align-items-center " onClick={()=>addProductToBasket()}>Add To Cart <img src={basket} alt='toma-ecomerce' width={30} height={30} style={{marginLeft:'6px'}}/></button>
           </div>
           <div className="mb-3">
-            <button className="buyNow" style={{background:'#27c8a3'}} onClick={()=>{navigate('/cart')}}>Buy it Now <img src={heart} alt='toma-ecomerce' width={30} height={30} style={{marginleft:'6px'}}/></button>
+            <button className="buyNow" style={{background:'#27c8a3'}} onClick={()=>{addProductToBasket();navigate('/cart')}}>Buy it Now <img src={heart} alt='toma-ecomerce' width={30} height={30} style={{marginleft:'6px'}}/></button>
           </div>
           <div>
             <p><img src={eye} alt="toma-store" style={{marginRight:'8px',fontFamily:'alot,sans-serif'}}/>200 customers are viewing this product</p>

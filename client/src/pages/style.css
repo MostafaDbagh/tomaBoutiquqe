@@ -86,8 +86,10 @@ input[type=number] {
     }
 .cart{
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   @media (max-width:786px) {
-    flex-direction: column-reverse;
   }
 }

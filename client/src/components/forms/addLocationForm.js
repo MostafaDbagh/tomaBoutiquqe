@@ -33,14 +33,16 @@ const validationSchema = Yup.object().shape({
     customer_location_street_address: Yup.string().required('Apartment Number is required'),
   });
 
+
+    
+const LocationForm = ({setIsLocationSubmited}) => {
   const handleSubmit = async(values, { setSubmitting }) => {
      
-    const res  = await sendLocation(values);
-
+    const res  = await sendLocation(values)
+      setIsLocationSubmited(true)
       }
-    
-const LocationForm = () => (
-  <div className=' p-3  '  >
+  return(
+  <div className='   shadow '  >
     <Formik
       initialValues={initialValues}
       validationSchema={validationSchema}
@@ -126,6 +128,7 @@ const LocationForm = () => (
       )}
     </Formik>
   </div>
-);
+  )
+};
 
 export default LocationForm;
