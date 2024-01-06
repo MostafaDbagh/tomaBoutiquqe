@@ -19,7 +19,6 @@ const initialValues = {
   customer_location_city: '',
   customer_location_district: '',
   customer_location_street_address: '',
-  location_id:'1'
   
 };
 const validationSchema = Yup.object().shape({
@@ -35,14 +34,14 @@ const validationSchema = Yup.object().shape({
 
 
     
-const LocationForm = ({setIsLocationSubmited}) => {
+const LocationForm = ({setIsLocationSubmited,orderIdState}) => {
   const handleSubmit = async(values, { setSubmitting }) => {
      
-    const res  = await sendLocation(values)
+    const res  = await sendLocation({values,location_id:orderIdState})
       setIsLocationSubmited(true)
       }
   return(
-  <div className='   shadow '  >
+  <div className='shadow'  >
     <Formik
       initialValues={initialValues}
       validationSchema={validationSchema}

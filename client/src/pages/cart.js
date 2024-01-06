@@ -119,7 +119,7 @@ const Cart = () => {
 
         </div>
         <div>
-        <LocationForm setIsLocationSubmited={setIsLocationSubmited}/>
+        <LocationForm setIsLocationSubmited={setIsLocationSubmited} orderIdState={orderIdState}/>
         </div>
         <button disabled={!isLocaitonSubmited} onClick={()=>handleMakeOrder()}style={{fontFamily:'lato',minWidth:'300px'}}  className='btn btn-primary btn-lg mx-auto my-5 bgPink border-0'>Submit your order</button>
 
