@@ -12,7 +12,7 @@
 .inputContainer{
     position: relative;
    margin: 12px ;
-   width: 350px;
+   max-width: 310px;
 
 }
 

@@ -52,15 +52,15 @@ const LocationForm = ({setIsLocationSubmited,orderIdState}) => {
         <Form className='d-flex justify-content-center align-items-center flex-column  mx-auto' >
         <p className='p-3 ' style={{fontSize:'34px',fontFamily:'oswald',borderBottom:'3px solid #ffd1da'}}>Billing & Shipping</p>
 <div className=' locationInputContainer p-3'>
-          <div  className='inputContainer '>
+          <div  className='inputContainer ' >
             <label htmlFor="customer_location_first_name">First Name:</label>
-            <Field type="text" name="customer_location_first_name" className='addProductInput' />
+            <Field type="text" name="customer_location_first_name" className='addLocationInput' />
             <ErrorMessage name="customer_location_first_name" component="div" className='errorMessage' />
           </div>
 
           <div  className='inputContainer'>
             <label htmlFor="customer_location_last_name">Last Name:</label>
-            <Field type="text" name="customer_location_last_name" className='addProductInput'  />
+            <Field type="text" name="customer_location_last_name" className='addLocationInput'  />
             <ErrorMessage name="customer_location_last_name" component="div" className='errorMessage' />
           </div>
           </div>
@@ -70,7 +70,7 @@ const LocationForm = ({setIsLocationSubmited,orderIdState}) => {
 
           <div  className='inputContainer'>
             <label htmlFor="customer_location_country">Country/Region:</label>
-            <Field as="select" name="customer_location_country" className='addProductInput' >
+            <Field as="select" name="customer_location_country" className='addLocationInput' >
               <option value="" disabled>
                 Select Category
               </option>
@@ -85,39 +85,38 @@ const LocationForm = ({setIsLocationSubmited,orderIdState}) => {
 
           <div  className='inputContainer'>
             <label htmlFor="customer_location_city">City/State:</label>
-            <Field type="text" name="customer_location_city" className='addProductInput' />
+            <Field type="text" name="customer_location_city" className='addLocationInput' />
             <ErrorMessage name="customer_location_city" component="div" className='errorMessage'  />
           </div>
 </div>
 <div className='locationInputContainer p-3'>
           <div  className='inputContainer'>
             <label htmlFor="customer_location_district">District:</label>
-            <Field type="text" name="customer_location_district" className='addProductInput'/>
+            <Field type="text" name="customer_location_district" className='addLocationInput'/>
             <ErrorMessage name="customer_location_district" component="div" className='errorMessage'  />
           </div>
 
           <div  className='inputContainer'>
             <label htmlFor="customer_location_street_address">Street Address:</label>
-            <Field type="text" name="customer_location_street_address" className='addProductInput'/>
+            <Field type="text" name="customer_location_street_address" className='addLocationInput'/>
             <ErrorMessage name="customer_location_street_address" component="div" className='errorMessage'  />
           </div>
 </div>
     
           
-          <div className=' locationInputContainer'>
 
-<div  className='inputContainer'>
-  <label htmlFor="customer_location_phone">Phone Number</label>
-  <Field type="text" name="customer_location_phone" className='addProductInput'/>
-  <ErrorMessage name="customer_location_phone" component="div" className='errorMessage'  />
-</div>
+<div className='locationInputContainer p-3'>
+          <div  className='inputContainer'>
+            <label htmlFor="customer_location_phone">Phone Number:</label>
+            <Field type="text" name="customer_location_phone" className='addLocationInput'/>
+            <ErrorMessage name="customer_location_phone" component="div" className='errorMessage'  />
+          </div>
 
-<div  className='inputContainer'>
-  <label htmlFor="customer_location_email">Email Address:</label>
-  <Field type="text" name="customer_location_email"className='addProductInput'/>
-  <ErrorMessage name="customer_location_email" component="div" />
-</div>
-
+          <div  className='inputContainer'>
+            <label htmlFor="customer_location_email">Email Address:</label>
+            <Field type="text" name="customer_location_email" className='addLocationInput'/>
+            <ErrorMessage name="customer_location_email" component="div" className='errorMessage'  />
+          </div>
 </div>
 
           <button type="submit" style={{fontFamily:'lato'}}  className='btn btn-primary btn-lg w-50 m-3 bgPink border-0'>
