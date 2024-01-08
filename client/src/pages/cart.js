@@ -6,8 +6,10 @@ import {filterOrder, reduceProduct} from '../redux/reducer/productReducer'
 import { useDispatch } from 'react-redux';
 import { ToastContainer,toast } from 'react-toastify';
 import { getNextOrederId,makeOrder } from "../api/productApi";
+import StatusModal from "../components/modal/status";
 const Cart = () => {
     const [orderIdState,setOrderIdState] = useState('')
+    const [showStatusModal,setShwoStatusModal] = useState(false)
     const [isLocaitonSubmited,setIsLocationSubmited] = useState(false)
     const product = useSelector(state => state.product)
     const dispatch = useDispatch()
@@ -76,7 +78,7 @@ const Cart = () => {
         if(res){
           localStorage.clear();
           setIsLocationSubmited(false)
-
+          setShwoStatusModal(true)
         }
        })
 
@@ -124,6 +126,7 @@ const Cart = () => {
         <button disabled={!isLocaitonSubmited} onClick={()=>handleMakeOrder()}style={{fontFamily:'lato',minWidth:'300px'}}  className='btn btn-primary btn-lg mx-auto my-5 bgPink border-0'>Submit your order</button>
 
         </div>
+        <StatusModal showStatusModal={showStatusModal} setShwoStatusModal={setShwoStatusModal}/>
         </div>
      );
 }
