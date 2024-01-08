@@ -43,11 +43,7 @@ const Cart = () => {
        return product.reduce((acc,curr)=>acc + curr.totalAmount,0)    
      }
 
-    const formatProductArray = () =>{
-        return product.reduce((acc,curr) =>{
-          return acc.push({quantity:curr.quantity,name:product.rest.productName,id:product.rest.id})
-        },[])
-    }
+
 
       const handleMakeOrder = async () =>{
         dispatch(filterOrder())
@@ -74,12 +70,14 @@ const Cart = () => {
       
        }
         
-       const res =  await makeOrder(data).then(res =>{
-        if(res){
+        await makeOrder(data).then(res =>{
+        if(res.success){
           localStorage.clear();
           setIsLocationSubmited(false)
           setShwoStatusModal(true)
         }
+       }).catch(err =>{
+        console.log(err)
        })
 
       }
@@ -121,9 +119,9 @@ const Cart = () => {
 
         </div>
         <div>
-        <LocationForm setIsLocationSubmited={setIsLocationSubmited} orderIdState={orderIdState}/>
+        <LocationForm setIsLocationSubmited={setIsLocationSubmited} orderIdState={orderIdState} locationSubmited={isLocaitonSubmited} handleMakeOrder={handleMakeOrder}/>
+
         </div>
-        <button disabled={!isLocaitonSubmited} onClick={()=>handleMakeOrder()}style={{fontFamily:'lato',minWidth:'300px'}}  className='btn btn-primary btn-lg mx-auto my-5 bgPink border-0'>Submit your order</button>
 
         </div>
         <StatusModal showStatusModal={showStatusModal} setShwoStatusModal={setShwoStatusModal}/>

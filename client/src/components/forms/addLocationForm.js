@@ -34,7 +34,7 @@ const validationSchema = Yup.object().shape({
 
 
     
-const LocationForm = ({setIsLocationSubmited,orderIdState}) => {
+const LocationForm = ({setIsLocationSubmited,orderIdState,locationSubmited,handleMakeOrder}) => {
   const handleSubmit = async(values, { setSubmitting }) => {
      const data = {...values,location_id:orderIdState+1}
     const res  = await sendLocation(data)
@@ -119,9 +119,11 @@ const LocationForm = ({setIsLocationSubmited,orderIdState}) => {
           </div>
 </div>
 
-          <button type="submit" style={{fontFamily:'lato'}}  className='btn btn-primary btn-lg w-50 m-3 bgPink border-0'>
+          <button type="submit" style={{fontFamily:'lato'}}  className='btn btn-primary btn-lg w-50 m-2 bgPink border-0'>
             Submit Your Location
           </button>
+          <button disabled={!locationSubmited} onClick={()=>handleMakeOrder()}  className='btn btn-primary btn-lg w-50 m-2 bgPink border-0 mb-4'>Submit your order</button>
+
         </Form>
       )}
     </Formik>
