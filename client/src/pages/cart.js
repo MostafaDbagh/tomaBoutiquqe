@@ -11,6 +11,8 @@ const Cart = () => {
     const [orderIdState,setOrderIdState] = useState('')
     const [showStatusModal,setShwoStatusModal] = useState(false)
     const [isLocaitonSubmited,setIsLocationSubmited] = useState(false)
+    const [disableSendorder,setDisableorder] = useState(false)
+
     const product = useSelector(state => state.product)
     const dispatch = useDispatch()
     const productNumber =() => {
@@ -46,6 +48,7 @@ const Cart = () => {
 
 
       const handleMakeOrder = async () =>{
+        setDisableorder(true)
         dispatch(filterOrder())
         const order_totalAmount =getTotalAmout()
         
@@ -119,7 +122,7 @@ const Cart = () => {
 
         </div>
         <div>
-        <LocationForm setIsLocationSubmited={setIsLocationSubmited} orderIdState={orderIdState} locationSubmited={isLocaitonSubmited} handleMakeOrder={handleMakeOrder}/>
+        <LocationForm disableSendorder={disableSendorder} setIsLocationSubmited={setIsLocationSubmited} orderIdState={orderIdState} locationSubmited={isLocaitonSubmited} handleMakeOrder={handleMakeOrder}/>
 
         </div>
 

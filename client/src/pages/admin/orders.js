@@ -90,7 +90,7 @@ return (
              <td style={{minWidth:'165px'}}>{order.order_date}</td>
              <td style={{minWidth:'300px'}} >{order.order_details.map(item =>
              <div><p className="mx-0 my-1" style={{fontSize:'16px', background:'#f39fdc',marginBottom:'8px',borderRadius:'12px',lineHeight:"40px",color:'#000',fontFamily:'lato'}}>
-              { 'porduct_id :'+item.rest.id  +" product_Name :"+    item.rest.productName + ' Quantity : '+item.quantity + ' Total :'+item.totalAmount}
+              { 'porduct_id :'+item?.rest?.id  +" product_Name :"+    item?.rest?.productName + ' Quantity : '+item?.quantity + ' Total :'+item?.totalAmount}
               </p>
               </div>)}
               </td>
@@ -99,10 +99,18 @@ return (
               <td>{order.order_paidAmount}</td>
               <td>{order.order_isCompleted +""}</td>
 
-              <td onClick={()=>{
+              <td>
+              <button
+              className="d-flex justify-content-center align-items-center"
+              style={{width:'120px',height:'60px',background:'#3e3e3e',borderRadius:'12px',fontFamily:'lato'}}
+
+              onClick={()=>{
                 setShowOrderModal(true)
                  setOrderId(order.order_id)
-              }}>{"update Order"}</td>
+              }}>{"update Order"}</button>
+              
+              
+              </td>
 
 
 
