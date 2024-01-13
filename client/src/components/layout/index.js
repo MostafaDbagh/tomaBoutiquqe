@@ -9,7 +9,6 @@ const Layout = ({children,setSearch}) => {
     return (
         <>
         <Header setShowPorductsModal={setShowPorductsModal}  />
-        <Search setSearch={setSearch}/>
           <MyModal showProductsModal={showProductsModal} setShowPorductsModal={setShowPorductsModal}/>
             {children}
             <Footer />
