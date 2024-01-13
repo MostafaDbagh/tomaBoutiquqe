@@ -48,7 +48,10 @@ export const ProductId = () => {
     setQuantity(q =>q-1)
 
   }
-  const addProductToBasket = () =>{
+  const addProductToBasket = (type) =>{
+    if(type=='buy'&& product.length >=1){
+      return
+    }
     const {product_price:productPrice,product_image:productImage,product_name:productName,product_id:id} = currentProduct;
           dispatch(addProduct({productPrice,productImage,productName,id,quantity}))
           toast.success('we add this produt to your basket!', {
@@ -133,10 +136,11 @@ export const ProductId = () => {
             <p>Subtotal Dhs:<span style={{fontFamily:'oswald,sans-serif',margin:"3px"}}>{currentProduct.product_price * quantity}</span></p>
           </div>
           <div className="my-2" style={{fontFamily:'alto,sans-serif'}}>
-            <button className="buyNow d-flex justify-content-center align-items-center " onClick={()=>addProductToBasket()}>Add To Cart <img src={basket} alt='toma-ecomerce' width={30} height={30} style={{marginLeft:'6px'}}/></button>
+            <button className="buyNow d-flex justify-content-center align-items-center " onClick={()=>addProductToBasket('add')}>Add To Cart <img src={basket} alt='toma-ecomerce' width={30} height={30} style={{marginLeft:'6px'}}/></button>
           </div>
           <div className="mb-3">
-            <button className="buyNow" style={{background:'#27c8a3'}} onClick={()=>{addProductToBasket();navigate('/cart')}}>Buy it Now <img src={heart} alt='toma-ecomerce' width={30} height={30} style={{marginleft:'6px'}}/></button>
+            {console.log(product,product.length)}
+            <button className="buyNow" style={{background:'#27c8a3'}} onClick={()=>{addProductToBasket('buy');navigate('/cart')}}>Go to Checkout <img src={heart} alt='toma-ecomerce' width={30} height={30} style={{marginleft:'6px'}}/></button>
           </div>
           <div>
             <p><img src={eye} alt="toma-store" style={{marginRight:'8px',fontFamily:'alot,sans-serif'}}/>200 customers are viewing this product</p>

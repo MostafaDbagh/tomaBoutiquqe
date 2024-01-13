@@ -55,7 +55,7 @@ useEffect( ()=>{
            <SectionTitle title='Our Products'/>
 
            <div className="flexBetween">
-           {prodcuts?.map((product) => (
+           {prodcuts.filter(item =>item.product_visibility)?.map((product) => (
              <div className="m-2 rounded-2" key={product._id}>
 
                <SingleProduct

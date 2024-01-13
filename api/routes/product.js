@@ -14,6 +14,8 @@ routes.delete('/:id',productController.deleteProduct);
 routes.get('/search/:searchQuery',productController.FilterProduct)
 routes.get('/mostRelated/:type',productController.getMostRelatedProducts)
 routes.post('/subscribe', subscrib.subscribeEmail)
+routes.post('/updateProduct/:id',productController.updateVisibilityOfProduct)
+
 
 
 
