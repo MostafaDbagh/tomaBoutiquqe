@@ -14,7 +14,7 @@ const SingleProduct = ({  productPrice, productName,productImage,productId }) =>
         <>
         <div className="card cardMargin border-0  rounded-0 bg-.bg-secondary shadow" style={{ }} >
             <div className="mt-4">
-            <div className="blurry-section" style={{width:'280px',height:'140px',background:'#fff0f5',position:'relative',margin:'16px 0',borderRadius:'10px'}}>
+            <div className="blurry-section" style={{width:'280px',height:'140px',background:'#fff0f5',position:'relative',margin:'16px auto',borderRadius:'10px'}}>
             <img src={`http://baby-bucket-product.s3.amazonaws.com/${productImage}`} 
             alt="productImage" 
             width={200} 

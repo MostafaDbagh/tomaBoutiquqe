@@ -76,3 +76,7 @@ export const adminLogin = async(data) =>{
   return response.data;
 
 }
+export const changeProductVisibility = async(id)=>{
+  const response = await Axios.post(`products/updateProduct/${id}`);
+  return response.data
+}

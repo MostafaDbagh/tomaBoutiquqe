@@ -7,10 +7,10 @@ import view from '../../assests/images/view.svg'
 import ViewProductModal from "../../components/modal/viewProductDetails";
 import DeleteProductModal from "../../components/modal/deleteProduct";
 import UpdateProductModal from "../../components/modal/updateProduct";
-import { getProductBySearch } from "../../api/productApi";
+import { getProductBySearch,changeProductVisibility } from "../../api/productApi";
 const ProductsAdmin = ({search}) =>{
 
-
+  const [isChecked, setIsChecked] = useState(false); 
     const [prodcuts, setProducts] = useState([]);
     const [productId,setProductId] = useState()
     const [productName,setProductName] = useState('')
@@ -60,7 +60,16 @@ useEffect( ()=>{
       fetchProductsApiBySearch(search)
 
     }
-},[showDeleteProductModal,showUpdateProductModal,search])
+},[showDeleteProductModal,showUpdateProductModal,search,isChecked])
+
+const handleCheckboxChange = async(id) =>{
+  await changeProductVisibility(id).then(res=>{
+    console.log(res)
+    setIsChecked(!isChecked)
+  }).catch(err=>{
+    console.error(err)
+  })
+}
 return (
     <>
     <div className="container mt-4">
@@ -74,7 +83,7 @@ return (
           <th> Product Category</th>
           <th> Product Admin</th>
             <th> Product Seen</th>
-            <th>_id</th>
+            <th>Product Visibility </th>
             <th>Action</th>
           </tr>
         </thead>
@@ -88,7 +97,14 @@ return (
              <td>{product.product_category}</td>
               <td>{product.product_admin}</td>
               <td>{product.product_seen}</td>
-              <td>{product._id}</td>
+              <td>
+              <input
+        type="checkbox"
+        checked={product.product_visibility}
+        onClick={()=>handleCheckboxChange(product.product_id)}
+      />
+
+              </td>
               <td className="d-flex gap-1">
                <img src={view} alt="toma-boutique" onClick={()=>{
                 setShowViewProductModal(true)

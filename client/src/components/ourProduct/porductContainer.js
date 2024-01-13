@@ -52,8 +52,8 @@ useEffect( ()=>{
         <>
         {loading ? <h3> loading...</h3>:(
            <div className=" position-relative">
-           <SectionTitle title='Our Products'/>
-
+           <SectionTitle  title='Our Products'/>
+<div style={{width:'100%',height:'32px'}}></div>
            <div className="flexBetween">
            {prodcuts.filter(item =>item.product_visibility)?.map((product) => (
              <div className="m-2 rounded-2" key={product._id}>

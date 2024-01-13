@@ -5,10 +5,21 @@
 .section-title::after {
   content: '';
   position: absolute;
-  top: 50px;
-  left: 0;
-  width: 100%;
+  top: 60px;
+  left: 44%;
+  width:165px;
   height: 3px;
-  background-color: #27c8a3;
+  background-color: #E80f88;
+}
+@media (max-width:786px) {
+  .section-title::after {
+    position: absolute;
+    top: 60px;
+    left: 35%;
+    width:140px;
+    height: 3px;
+    background-color: #E80f88;
+    margin-bottom:32px
+  }
 }
 /*# sourceMappingURL=index.css.map */
