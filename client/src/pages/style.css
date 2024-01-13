@@ -93,3 +93,16 @@ input[type=number] {
   @media (max-width:786px) {
   }
 }
+
+.background{
+  width: 99%;
+  height: 780px;
+  margin:0 auto;
+   background: url(../assests/images/bg.jpg); 
+   background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 24px;
+}
+.sperator{
+  color: #fba1b7;
+}
