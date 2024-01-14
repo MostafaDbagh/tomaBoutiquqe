@@ -71,9 +71,21 @@ li{
         font-size: 14px;
     }
 }
+.keyInfoSection{
+    display: flex;
+    flex-direction: row;
+    @media (max-width:786px) {
+        flex-direction: column;
+    }
+
+}
 .keyInfo{
+    display: flex;
     color: white;
     text-decoration: none;
     font-size: 18px;
     font-family: lato;
+    @media (max-width:786px) {
+        flex-direction: column;
+    }
 }

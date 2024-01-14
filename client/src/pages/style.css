@@ -106,3 +106,27 @@ input[type=number] {
 .sperator{
   color: #fba1b7;
 }
+
+.flexFontHeader{
+  font-size: 56px;
+  @media (max-width:786px) {
+    font-size: 38px;
+  }
+}
+.flexFontDesc{
+    padding: 0 32px;
+    font-size: 28px;
+  @media (max-width:786px) {
+        padding: 0 16px;
+        font-size: 22px;
+
+  }
+}
+.flexPadding{
+  padding: 0 32px;
+  @media (max-width:786px) {
+    padding: 0 16px;
+
+}
+
+}

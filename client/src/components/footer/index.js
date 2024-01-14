@@ -13,7 +13,7 @@ const Footer = () => {
         <>
         <div className=" px-3 py-5" style={{width:'98%',margin:'32px auto 8px',borderRadius:'24px',background:'#ffd1da'}}>
       <div className="socialMediaSection">
-<div className='d-flex'>
+<div className='keyInfo'>
         <div className="socialMedia   px-5 pt-5" style={{background:'#f8f9fa',borderRadius:'4px',height:'100%'}}>
           <img src={logo} alt="highquickAction" width='260' height='100' />
              <div className="socialMediaLinks px-3 pt-4 text-center" style={{color:"black",fontFamily:'oswald',fontSize:'18px'}}> 
@@ -27,7 +27,7 @@ const Footer = () => {
                 </ul>
              </div>
              <p className="my-5 text-center" style={{fontFamily:'oswald',fontSize:'22px',color:'#E80f88',margin:'0'}}>Shopping Different with us</p>
-             </div>
+             </div>\
              </div>
              <div className='p-5 my-auto' >
               <p   style={{fontFamily:'oswald',fontSize:'22px',padding:'0',marginBottom:'8px',borderBottom:'3px solid white',color:'#215259'}}>key Info</p>
