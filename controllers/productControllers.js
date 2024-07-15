@@ -5,6 +5,7 @@ const bucketName = process.env.AWS_BUCKET_NAME;
 const region = process.env.AWS_BUCKET_REGION;
 const accessKeyId = process.env.AWS_ACCESS_KEY;
 const secretAccessKey = process.env.AWS_SECRET_KEY;
+
 const fs = require("fs");
 const AWS = require("aws-sdk");
 
@@ -25,6 +26,7 @@ const addImageIntoS3 = async (file) => {
 };
 
 const addProduct = async (req, res, next) => {
+    
   const body = req.body;
   const file = req.file;
   if (!body || !file) {
@@ -33,7 +35,6 @@ const addProduct = async (req, res, next) => {
       error: "No message was sent",
     });
   }
-
   const resultUploadIntoS3 = await addImageIntoS3(file);
   console.log(resultUploadIntoS3, "result to s3");
   const product = new productSchema({

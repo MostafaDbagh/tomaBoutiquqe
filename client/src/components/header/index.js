@@ -12,16 +12,27 @@ function Header({setShowPorductsModal}) {
     return product.reduce((acc,curr) => acc + curr.quantity,0)
   }
   return (
-    <Navbar collapseOnSelect expand="lg" style={{minHeight:'90px',width:'99%',margin:'4px auto',borderRadius:'10px',color:'white',
-  
-    background: " #f39fdc "
+    <Navbar collapseOnSelect expand="lg"
+     style={{
+    minHeight:'70px',
+     width:'90%',
+     margin:'4px auto',
+     borderRadius:'48px',
+     color:'white',
+     background: 'linear-gradient(to right, #fbc2eb 0%, pink 61%, #fbc2eb 100%)',
+     position:'fixed',
+     left:'5%',
+     top:'3%',
+     border: '1px solid rgba(255, 255, 255, 0.2)',
+     backdropFilter:' blur(10px)',
+     boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+     zIndex:'1000',
 
-   
-    
-    
+
+
     }} >
       
-      <Container>
+      <Container className='px-5 py-0'>
         <Navbar.Brand href="#home"></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">

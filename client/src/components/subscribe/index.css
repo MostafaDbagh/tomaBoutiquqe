@@ -30,8 +30,9 @@ background: #ffd1da;
 font-weight: bold;
     border: none;
     outline: 0;
-    padding: 12px 24px  ;
+    padding: 12px 24px ;
     font-size: 18px;
+    margin: 0 !important;
     @media(max-width:786px) {
         width: 100px;
         padding: 12px 6px;

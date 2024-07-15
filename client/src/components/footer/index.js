@@ -13,7 +13,7 @@ const Footer = () => {
         <>
         <div className=" px-3 py-5" style={{width:'98%',margin:'32px auto 8px',borderRadius:'24px',background:'#ffd1da'}}>
       <div className="socialMediaSection">
-<div className='keyInfo'>
+<div className='keyInfoSection'>
         <div className="socialMedia   px-5 pt-5" style={{background:'#f8f9fa',borderRadius:'4px',height:'100%'}}>
           <img src={logo} alt="highquickAction" width='260' height='100' />
              <div className="socialMediaLinks px-3 pt-4 text-center" style={{color:"black",fontFamily:'oswald',fontSize:'18px'}}> 
@@ -40,6 +40,7 @@ const Footer = () => {
              </div>
        
         <div className="form d-flex flex-column px-5" style={{gap:'12px'}} >
+          <p style={{fontFamily:'oswald',fontSize:'22px',borderBottom:'1px solid black',padding:'8px '}}>Get in Touch</p>
           <input
             type="text"
             id="name"
@@ -60,7 +61,6 @@ const Footer = () => {
             id="phoneNumber"
             name="phoneNumber"
             className='contactSupportInput'
-
             placeholder="Enter you Phone "
           />
           <textarea
