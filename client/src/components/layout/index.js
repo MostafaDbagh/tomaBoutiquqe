@@ -4,12 +4,11 @@ import  Footer  from '../footer';
 import MyModal from '../modal/pickedProducts';
 import { Search } from '../search';
 import { ToastContainer } from 'react-bootstrap';
-const Layout = ({children,setSearch}) => {
-    const [showProductsModal,setShowPorductsModal ] = useState(false);
+const Layout = ({children,setSearch,showModalProduct,setShowProductModal}) => {
     return (
         <>
-   
-          <MyModal showProductsModal={showProductsModal} setShowPorductsModal={setShowPorductsModal}/>
+        <Header setShowPorductsModal={setShowProductModal} showModalProduct={showModalProduct}   />
+          <MyModal showProductsModal={showModalProduct} setShowPorductsModal={setShowProductModal}/>
             {children}
             <Footer />
         </>

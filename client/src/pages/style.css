@@ -26,13 +26,12 @@ input[type=number] {
     box-shadow: 0 0 5px rgba(0, 0, 255, 0.5);
   }
   .spin{
-    width: 40px;
-    height: 40px;
-    line-height: 22px;
-         border-radius: 50%;
+    width: 30px;
+    height: 30px;
          margin: 0 4px;
          font-weight: bold;
-         font-size: 18px;
+         font-size: 20px;
+         line-height: 0;
 
   }
   .buyNow{
@@ -86,10 +85,8 @@ input[type=number] {
     }
 .cart{
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
-
+  padding: 32px;
   @media (max-width:786px) {
   }
 }
@@ -127,4 +124,10 @@ input[type=number] {
 
 }
 
+}
+input[type="radio"] {
+  accent-color: #E80f88; /* Newer CSS property */
+  width: 16px;
+  height: 16px;
+  margin-right: 12px;
 }

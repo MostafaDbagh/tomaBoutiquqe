@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-
+import { Navbar,Nav,Container } from "react-bootstrap";
 import { getProductById } from "../api/productApi";
 import heart from '../assests/images/heart.svg'
 import basket from '../assests/images/whiteBasket.svg'
@@ -68,10 +68,10 @@ export const ProductId = () => {
   }
   return (
 
-    <div>
+    <div style={{paddingTop:'128px'}}>
 
       <div className="flexCenter my-3">
-        <div style={{ margin:'0 auto' ,width:'700px'}}>
+        <div style={{ margin:'0 auto' ,width:'600px'}}>
           <img
             src={`http://baby-bucket-product.s3.amazonaws.com/${currentProduct["product_image"]}`}
             alt="productImage"
@@ -139,7 +139,6 @@ export const ProductId = () => {
             <button className="buyNow d-flex justify-content-center align-items-center " onClick={()=>addProductToBasket('add')}>Add To Cart <img src={basket} alt='toma-ecomerce' width={30} height={30} style={{marginLeft:'6px'}}/></button>
           </div>
           <div className="mb-3">
-            {console.log(product,product.length)}
             <button className="buyNow" style={{background:'#27c8a3'}} onClick={()=>{addProductToBasket('buy');navigate('/cart')}}>Go to Checkout <img src={heart} alt='toma-ecomerce' width={30} height={30} style={{marginleft:'6px'}}/></button>
           </div>
           <div>

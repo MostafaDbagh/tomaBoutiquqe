@@ -56,7 +56,7 @@ const addProduct = async (req, res, next) => {
 const addImage = async (req, res) => {
   const file = req.file;
   const result = await uploadFile(file);
-  res.send(result?.key);
+  res.send(result?.key,'hey safi');
 };
 
 const getImage = (req, res) => {

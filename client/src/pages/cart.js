@@ -86,20 +86,28 @@ const Cart = () => {
       }
     return ( 
 
-        <div>
+        <div  style={{paddingTop:'128px'}}>
 <p className="text-center"style={{fontFamily:'oswald',fontSize:'38px',}}>Checkout </p>
      
         <div className="cart">
 
-     
+        <div className="w-50" >
+        <LocationForm
+         disableSendorder={disableSendorder}
+          setIsLocationSubmited={setIsLocationSubmited}
+           orderIdState={orderIdState}
+           locationSubmited={isLocaitonSubmited} 
+           handleMakeOrder={handleMakeOrder}/>
+        </div>
 
-        <div className="p-3 " style={{width:"100%",position:'relative'}} >
-            <p className="text-center my-4" style={{fontFamily:'oswald',fontSize:'34px'}}>Order Summary</p>
+
+        <div className="w-50 " style={{position:'relative',display:'flex',flexDirection:'column',gap:'16px',justifyContent:'center',alignItems:'center'}} >
+     <p className="text-center mb-4" style={{fontFamily:'oswald',fontSize:'34px'}}>Order Summary</p>
     {productNumber() !== 0  && product.map(product =>
   {
     return(
       product.quantity > 0 &&
-      <div key={product.productImage} className='d-flex align-items-center justify-content-around my-2  shadow-sm' style={{maxHeight:'100px',fontFamily:'lato',width:"96%"}}>
+      <div key={product.productImage} className='d-flex align-items-center justify-content-around my-2  shadow-sm' style={{maxHeight:'100px',fontFamily:'lato',width:"80%",margin:'0 auto',borderRadius:'24px'}}>
       <div  style={{background:'#f6f6f6',position:'relative',margin:'16px 0'}}>
      <img src={`http://baby-bucket-product.s3.amazonaws.com/${product['rest'].productImage}`} 
      alt="productImage" 
@@ -119,12 +127,75 @@ const Cart = () => {
 
     )}
 )}
+<div style={{width:'80%',margin:'0 auto',position:'relative'}}>
+<input type="text" className="shadow-sm input" id="cupon" placeholder="Code...." style={{minHeight:'30px',padding:'16px 24px',borderRadius:'24px',fontFamily:'lato',fontSize:'16px',   color: '#212529',outline:'none',
+}} ></input>
+<button
+className="m-0 "
+ style={{background:'#000',
+ padding:'8px 16px',borderRadius:'24px',position:'absolute',right:'8px',bottom:'8px',fontFamily:'lato'}}
+>Apply Cupon</button>
+</div>
 
-        </div>
-        <div>
-        <LocationForm disableSendorder={disableSendorder} setIsLocationSubmited={setIsLocationSubmited} orderIdState={orderIdState} locationSubmited={isLocaitonSubmited} handleMakeOrder={handleMakeOrder}/>
 
+<div className="shadow" style={{width:'80%',margin:'0 auto auto',position:'relative',borderRadius:'24px',paddingBottom:'16px'}}>
+  <div className="px-3 pt-3" style={{fontFamily:'oswald',fontSize:'18px'}}>
+    <div style={{marginBottom:'16px 0 24px'}}>
+    <p style={{fontFamily:'oswald',fontSize:'24px',marginBottom:'8px',color:'#E81088'}}>Summary</p>
+    <p style={{fontSize:'14px',color:'#757575',fontFamily:'oswald'}}>the total cost consist of the tax,and shipping charge</p>
+    </div>
+<div className="d-flex my-2">
+  <p style={{fontSize:'18px'}}>Items Total :  </p>
+  <p style={{fontWeight:'bold',fontSize:'18px',color:'#E81088',marginLeft:'4px'}}> 150 AED</p>
+</div>
+<div className="d-flex mb-2">
+  <p >Delivery Fee:  </p>
+  <p style={{fontWeight:'bold',fontSize:'18px',color:'#E81088',marginLeft:'4px'}}> 150 AED</p>
+</div>
+</div>
+<div style={{width:'100%',border:'1px solid #E81088',borderRadius:'24px',padding:'0 8px'}}></div>
+
+<div className="d-flex  p-3" style={{fontFamily:'oswald'}}>
+  <p style={{fontSize:'18px'}}>Total Fee :</p>
+  <p style={{fontWeight:'bold',fontSize:'18px',color:'#E81088',marginLeft:'4px'}}> 150 AED</p>
+  </div>
+
+  <div className="d-flex px-1 py-3 align-items-center  w-75 mb-3  shadow-sm"style={{marginLeft:'16px',position:'relative',border:'1px dashed #000',borderRadius:'24px'}}>
+    <div className="" style={{position:'absolute',top:'-12px',left:'20px',fontFamily:'lato',background:'pink',borderRadius:'12px',padding:' 0 8px',color:'white'}}>Payment Method</div>
+    <div className="mt-1">
+        <input 
+         className="mx-2"
+          type="radio" 
+          id="cashondelivery" 
+          name="paymentMethod" 
+          value="cashondelivery" 
+          checked={true} 
+          onChange={()=>console.log('safi')} 
+        />
+          <label htmlFor="cashondelivery" className="m-0" style={{fontSize:'18px',fontFamily:'oswald',color:'#212529'}}>Cash on Delivery</label>
+          <img src='/assests/images/delivery-truck.svg' alt='toma-boutique' width="32px" height="32px" style={{
+            marginLeft:'8px'
+          }}/>
+          </div>
+       
+      </div>
+</div>
+
+ 
+<button
+              disabled={false}
+              onClick={() => handleMakeOrder()}
+              className="  w-75 mt-3 bgPink  p-3 "
+              style={{color:'white',fontFamily:'lato',fontWeight:'bold',fontSize:'18px',borderRadius:'24px'}}
+            >
+              Submit your order
+            </button>
+<div>
+
+</div>
         </div>
+
+
 
         </div>
         <StatusModal showStatusModal={showStatusModal} setShwoStatusModal={setShwoStatusModal}/>

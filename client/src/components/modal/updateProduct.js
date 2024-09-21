@@ -95,13 +95,13 @@ useEffect(()=>{
           <div className='inputContainer'>
             <label htmlFor="product_image">Product Image:</label>
             <input
+            className='addProductInput'
               id="product_image"
               name="product_image"
               type="file"
               onChange={(event) => {
                 setFieldValue("product_image", event.currentTarget.files[0]);
               }}
-              className='addProductInput'
             />
           </div>
           <div  className='inputContainer'>

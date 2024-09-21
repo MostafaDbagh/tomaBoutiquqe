@@ -59,7 +59,7 @@ const LocationForm = ({
       .catch((err) => console.log(err));
   };
   return (
-    <div className="shadow">
+    <div className="shadow ">
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -67,7 +67,7 @@ const LocationForm = ({
         enableReinitialize={true}
       >
         {({ isSubmitting, setFieldValue }) => (
-          <Form className="d-flex justify-content-center align-items-center flex-column  mx-auto">
+          <Form className="d-flex justify-content-center align-items-center flex-column  mx-auto rounded-lg ">
             <p
               className="p-3 "
               style={{
@@ -87,6 +87,8 @@ const LocationForm = ({
                   type="text"
                   name="customer_location_first_name"
                   className="addLocationInput"
+                  placeHolder='Enter your First Name...'
+                  
                 />
                 <ErrorMessage
                   name="customer_location_first_name"
@@ -101,6 +103,7 @@ const LocationForm = ({
                   type="text"
                   name="customer_location_last_name"
                   className="addLocationInput"
+                  placeHolder='Enter your Last Name...'
                 />
                 <ErrorMessage
                   name="customer_location_last_name"
@@ -119,6 +122,7 @@ const LocationForm = ({
                   as="select"
                   name="customer_location_country"
                   className="addLocationInput"
+                  placeHolder='Enter your Location...'
                 >
                   <option value="" disabled>
                     Select Category
@@ -142,6 +146,7 @@ const LocationForm = ({
                   type="text"
                   name="customer_location_city"
                   className="addLocationInput"
+                  placeHolder='Enter your City...'
                 />
                 <ErrorMessage
                   name="customer_location_city"
@@ -157,6 +162,7 @@ const LocationForm = ({
                   type="text"
                   name="customer_location_district"
                   className="addLocationInput"
+                  placeHolder='Enter your Area...'
                 />
                 <ErrorMessage
                   name="customer_location_district"
@@ -173,6 +179,7 @@ const LocationForm = ({
                   type="text"
                   name="customer_location_street_address"
                   className="addLocationInput"
+                  placeHolder='Enter your Street Name...'
                 />
                 <ErrorMessage
                   name="customer_location_street_address"
@@ -189,6 +196,7 @@ const LocationForm = ({
                   type="text"
                   name="customer_location_phone"
                   className="addLocationInput"
+                  placeHolder='Enter your Phone Number...'
                 />
                 <ErrorMessage
                   name="customer_location_phone"
@@ -203,6 +211,7 @@ const LocationForm = ({
                   type="text"
                   name="customer_location_email"
                   className="addLocationInput"
+                  placeHolder='Enter your Email...'
                 />
                 <ErrorMessage
                   name="customer_location_email"
@@ -212,21 +221,7 @@ const LocationForm = ({
               </div>
             </div>
 
-            <button
-              disabled={disableSendLocaiton}
-              type="submit"
-              style={{ fontFamily: "lato" }}
-              className="btn btn-primary btn-lg w-50 m-2 bgPink border-0"
-            >
-              Submit Your Location
-            </button>
-            <button
-              disabled={!locationSubmited || disableSendorder}
-              onClick={() => handleMakeOrder()}
-              className="btn btn-primary btn-lg w-50 m-2 bgPink border-0 mb-4"
-            >
-              Submit your order
-            </button>
+      
           </Form>
         )}
       </Formik>

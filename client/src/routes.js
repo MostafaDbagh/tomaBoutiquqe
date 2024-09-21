@@ -16,10 +16,12 @@ import AdminLogin from "./pages/admin/adminLogin";
 import ProtectedRoute from "./utils/protectedRoutes";
 export const PageRoutes = () =>{
     const [search,setSearch] = useState('')
+    const [showProductsModal,setShowPorductsModal ] = useState(false);
+
     const isAuth = useSelector(state =>state.auth.isAuthenticated)
 
 return(
-<Layout setSearch={setSearch}>
+<Layout setSearch={setSearch} showModalProduct={showProductsModal} setShowProductModal={setShowPorductsModal}>
     <Routes>
    <Route exact path="/" element={<Home search={search} setSearch={setSearch}/>}/>
    <Route  path="/product/:id" element={<ProductId/>}/>

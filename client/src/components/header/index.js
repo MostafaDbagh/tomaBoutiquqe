@@ -5,12 +5,13 @@ import basket from '../../assests/images/basket.svg'
 import { useSelector } from 'react-redux';
 import './index.css'
 
-function Header({setShowPorductsModal}) {
+function Header({setShowPorductsModal,showModalProduct}) {
   const product = useSelector((state) => state.product);
 
   const productNuber =  () =>{
     return product.reduce((acc,curr) => acc + curr.quantity,0)
   }
+
   return (
     <Navbar collapseOnSelect expand="lg"
      style={{
@@ -31,18 +32,20 @@ function Header({setShowPorductsModal}) {
 
 
     }} >
-      
+              {console.log(showModalProduct,'showModalProduct')}
+
       <Container className='px-5 py-0'>
         <Navbar.Brand href="#home"></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto" style={{fontSize:'18px'}}>
             <Nav.Link href="/" className='px-4'>Home</Nav.Link>
-            <Nav.Link href="#pricing" className='px-4'>clothes</Nav.Link>
-            <Nav.Link href="#pricing" className='px-4'>Toys</Nav.Link>
-            <Nav.Link href="#pricing"className='px-4'>Feeding</Nav.Link>
-            <Nav.Link href="#pricing" className='px-4'>SkinCare</Nav.Link>
-       
+            <Nav.Link href="#pricing" className='px-4'>Makeup</Nav.Link>
+            <Nav.Link href="#pricing" className='px-4'>Accessories</Nav.Link>
+            <Nav.Link href="#pricing"className='px-4'>Perfumes</Nav.Link>
+            <Nav.Link href="#pricing" className='px-4'>Hair-Care</Nav.Link>
+            <Nav.Link href="#pricing" className='px-4'>Cosmetics</Nav.Link>
+            <Nav.Link href="#pricing" className='px-4'>Sunstiblity</Nav.Link>
           </Nav>
           <Nav>
             <Nav.Link href="#deets">Contact Us</Nav.Link>
