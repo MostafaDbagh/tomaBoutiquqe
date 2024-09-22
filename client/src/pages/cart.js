@@ -91,7 +91,7 @@ const Cart = () => {
      
         <div className="cart">
 
-        <div className="w-50" >
+        <div className="" >
         <LocationForm
          disableSendorder={disableSendorder}
           setIsLocationSubmited={setIsLocationSubmited}
@@ -101,13 +101,13 @@ const Cart = () => {
         </div>
 
 
-        <div className="w-50 " style={{position:'relative',display:'flex',flexDirection:'column',gap:'16px',justifyContent:'center',alignItems:'center'}} >
+        <div className="" style={{position:'relative',display:'flex',flexDirection:'column',gap:'16px',justifyContent:'center',alignItems:'center',minWidth:'40%'}} >
      <p className="text-center mb-4" style={{fontFamily:'oswald',fontSize:'34px'}}>Order Summary</p>
     {productNumber() !== 0  && product.map(product =>
   {
     return(
       product.quantity > 0 &&
-      <div key={product.productImage} className='d-flex align-items-center justify-content-around my-2  shadow-sm' style={{maxHeight:'100px',fontFamily:'lato',width:"80%",margin:'0 auto',borderRadius:'24px'}}>
+      <div key={product.productImage} className='d-flex align-items-center justify-content-around my-2  shadow-sm ' style={{maxHeight:'100px',fontFamily:'lato',margin:'0 auto',borderRadius:'24px',minWidth:'100%'}}>
       <div  style={{background:'#f6f6f6',position:'relative',margin:'16px 0'}}>
      <img src={`http://baby-bucket-product.s3.amazonaws.com/${product['rest'].productImage}`} 
      alt="productImage" 
@@ -127,7 +127,7 @@ const Cart = () => {
 
     )}
 )}
-<div style={{width:'80%',margin:'0 auto',position:'relative'}}>
+<div style={{margin:'0 auto',position:'relative',minWidth:'100%'}}>
 <input type="text" className="shadow-sm input" id="cupon" placeholder="Code...." style={{minHeight:'30px',padding:'16px 24px',borderRadius:'24px',fontFamily:'lato',fontSize:'16px',   color: '#212529',outline:'none',
 }} ></input>
 <button
@@ -138,7 +138,7 @@ className="m-0 "
 </div>
 
 
-<div className="shadow" style={{width:'80%',margin:'0 auto auto',position:'relative',borderRadius:'24px',paddingBottom:'16px'}}>
+<div className="shadow" style={{width:'80%',margin:'0 auto auto',position:'relative',borderRadius:'24px',paddingBottom:'16px',minWidth:'100%'}}>
   <div className="px-3 pt-3" style={{fontFamily:'oswald',fontSize:'18px'}}>
     <div style={{marginBottom:'16px 0 24px'}}>
     <p style={{fontFamily:'oswald',fontSize:'24px',marginBottom:'8px',color:'#E81088'}}>Summary</p>
