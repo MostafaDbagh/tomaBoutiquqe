@@ -15,7 +15,11 @@ const ProductSchema = new mongoose.Schema({
   product_category:{ type: String, required: true },
   product_quantity:{type:Number,required: true },
   product_stock:{type:Number,required:false},
-  product_visibility:{type:Boolean,required:false}
+  product_visibility:{type:Boolean,required:false},
+  product_tag:{type:String,required:false},
+  product_soldout:{type:Array,required:false},
+
+
 
 });
 

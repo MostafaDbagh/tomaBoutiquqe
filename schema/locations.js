@@ -7,7 +7,6 @@ const LocationSchema = new mongoose.Schema(
         customer_location_last_name:{type:String,required:true},
         customer_location_phone:{type:String,required:true},
         customer_location_email:{type:String,required:true},
-
         customer_location_country:{type:String,required:true},
         customer_location_city:{type:String,required:true},
         customer_location_district:{type:String,required:true},
