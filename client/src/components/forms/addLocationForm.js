@@ -56,7 +56,7 @@ const LocationForm = ({
           resetForm();
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.error(err));
   };
   return (
     <div className="shadow ">

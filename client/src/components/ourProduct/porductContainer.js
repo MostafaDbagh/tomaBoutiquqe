@@ -57,13 +57,16 @@ useEffect( ()=>{
            <div className="flexBetween">
            {prodcuts?.map((product) => (
              <div className="m-2 rounded-2" key={product._id}>
-
                <SingleProduct
                  productType={product?.product_type}
                  productPrice={product?.product_price}
                  productName={product?.product_name}
                  productImage={product?.product_image}
                  productId={product?.product_id}
+                 hasDiscount={product.product_soldout ? JSON.parse(product.product_soldout[0]):false}
+                 discountValue = {product.product_soldout[1]}
+                 discountReason={ product.product_soldout[2]}
+
                />
              </div>
            ))}

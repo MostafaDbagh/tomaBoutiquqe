@@ -4,7 +4,6 @@ const getOrders = async (req, res) => {
   await orderSchema
     .find({})
     .then((data) => {
-      console.log(data, "data");
       res.status(200).json({
         data,
         message: "data fetch successfully",
@@ -85,14 +84,12 @@ const getLastOrderId = async (req,res) => {
 const updateOrder = async(req,res) =>{
 const { id } = req.params;
 const body = req.body;
-console.log(body,'body')
 try{
     const currentOrder = await orderSchema.findOneAndUpdate(
         { order_id: id }, // Match criteria based on _id
         { $set: body }, // Data to update
         { returnOriginal: false } // Return the updated document
       );
-      console.log(currentOrder.value)
       res.json({data:currentOrder,message:'order updated successfullu'})
 }catch(error){
 res.json({error,message:'no data to show'})

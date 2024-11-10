@@ -17,6 +17,7 @@ const fetchProductById = async(id) =>{
 useEffect(()=>{
 fetchProductById(productId)
 },[productId])
+
     const reduceProductNumber = (product) =>{
       toast.error('🦄 Wow so easy!', {
         position: "bottom-right",

@@ -64,7 +64,6 @@ useEffect( ()=>{
 
 const handleCheckboxChange = async(id) =>{
   await changeProductVisibility(id).then(res=>{
-    console.log(res)
     setIsChecked(!isChecked)
   }).catch(err=>{
     console.error(err)

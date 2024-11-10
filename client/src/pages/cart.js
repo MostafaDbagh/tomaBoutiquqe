@@ -80,7 +80,7 @@ const Cart = () => {
           setShwoStatusModal(true)
         }
        }).catch(err =>{
-        console.log(err)
+        console.error(err)
        })
 
       }

@@ -2,10 +2,10 @@ import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
 
 
-const ConfirmUpdateAction = ({ showConfirmModal, setShwoConfrimModal:handleClose}) => {
+const ConfirmUpdateAction = ({ showConfirmModal, setShwoConfrimModal}) => {
   return (
     <>
-    <Modal show={showConfirmModal} onHide={handleClose}>
+    <Modal show={showConfirmModal} onHide={()=>setShwoConfrimModal(false)}>
       <Modal.Header closeButton>
         <Modal.Title>
       {`confirmation for Update Action`}
@@ -16,7 +16,7 @@ const ConfirmUpdateAction = ({ showConfirmModal, setShwoConfrimModal:handleClose
       </Modal.Body>
       <Modal.Footer>
 
-        <Button variant="secondary"onClick={()=>handleClose(false)}  >
+        <Button variant="secondary"onClick={()=>setShwoConfrimModal(false)}  >
           Close
         </Button>
       

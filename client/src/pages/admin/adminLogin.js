@@ -30,7 +30,6 @@ const auth = useSelector(state =>state.auth.isAuthenticated);
   
     return (
         <div className='d-flex'>
-            {console.log(auth,"auth")}
 <div className='left-side d-flex justify-content-center align-items-center ' style={{width:'50%',background:'#ffd1da'}}>
 <img src={logo} alt='toma-boutique' width={260} height={100} />
 </div>

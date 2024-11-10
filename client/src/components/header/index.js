@@ -32,7 +32,6 @@ function Header({setShowPorductsModal,showModalProduct}) {
 
 
     }} >
-              {console.log(showModalProduct,'showModalProduct')}
 
       <Container className='px-5 py-0'>
         <Navbar.Brand href="#home"></Navbar.Brand>

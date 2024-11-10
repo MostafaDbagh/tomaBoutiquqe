@@ -16,7 +16,6 @@ const s3 = new AWS.S3({
 });
 
 const addImageIntoS3 = async (file) => {
-  console.log(file, "file");
   const uploadParams = {
     Bucket: bucketName,
     Body: file.buffer,
@@ -36,7 +35,6 @@ const addProduct = async (req, res, next) => {
     });
   }
   const resultUploadIntoS3 = await addImageIntoS3(file);
-  console.log(resultUploadIntoS3, "result to s3");
   const product = new productSchema({
     ...body,
     product_image: resultUploadIntoS3.key,
@@ -81,21 +79,27 @@ const getProducts = async (req, res) => {
 
 const getProductById = async (req, res) => {
   const { id } = req.params;
-  await productSchema
-    .find({ product_id: id })
-    .then((data) => {
-      res.status(200).json({
-        data: data[0],
-        message: "productId fetch successfully",
-      });
-    })
-    .catch((err) => {
-      res.status(404).json({
-        err,
-        message: "data not found",
-      });
+
+  try {
+    const product = await productSchema.findOne({ product_id: id });
+    if (!product) {
+      return res.status(404).json({ message: "Product not found" });
+    }
+    product.product_seen = +product.product_seen + 1;
+    await product.save();
+    res.status(200).json({
+      data: product,
+      message: "Product fetched and viewed count updated successfully",
     });
+  } catch (err) {
+    console.error(err, 'Error fetching product');
+    res.status(500).json({
+      err,
+      message: "An error occurred while fetching the product",
+    });
+  }
 };
+
 
 const deleteProduct = async (req, res) => {
   const { id } = req.params;
@@ -118,14 +122,12 @@ const deleteProduct = async (req, res) => {
 const updateProduct = async (req, res) => {
   const body = req.body;
   const { id } = req.params;
-  console.log(req.body, "reqqqqq");
   if (!body) {
     return res.status(400).json({
       success: false,
       error: "You must provide a body to update",
     });
   }
-  console.log(body, "body");
   await productSchema
     .findOne({ product_id: id })
 
@@ -142,6 +144,9 @@ const updateProduct = async (req, res) => {
       product.product_Color = body.product_Color ?? product.product_Color;
       product.product_Size = body.product_Size ?? product.product_Size;
       product.product_stock = body.product_stock ?? product.product_stock;
+      if (body.product_soldout && Array.isArray(body.product_soldout)) {
+        product.product_soldout = body.product_soldout;
+      }
       product.save().then(() => {
         return res.status(200).json({
           success: true,
@@ -160,12 +165,10 @@ const updateProduct = async (req, res) => {
 
 const getMostRelatedProducts = async (req, res) => {
   const { type } = req.params;
-  console.log("type", type);
   try {
     const mostRelatedProdusts = await productSchema.find({
       product_category: type,
     });
-    console.log(mostRelatedProdusts, "most Related product");
     res
       .status(200)
       .json({

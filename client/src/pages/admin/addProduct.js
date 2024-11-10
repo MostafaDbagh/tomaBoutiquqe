@@ -19,6 +19,10 @@ export const ProductForm = () => {
     product_category: Yup.string().required('Product Category is required'),
     product_quantity: Yup.number().required('Product Quantity is required'),
     product_stock: Yup.number(),
+    product_tag: Yup.string(),
+    product_soldout:Yup.array(),
+
+
   });
   const categoryOptions = [
     { value: 'electronics', label: 'Electronics' },
@@ -40,13 +44,18 @@ export const ProductForm = () => {
     product_category: '',
     product_quantity: '',
     product_stock: '',
+    product_tag:'',
+    product_isDiscounted:false,
+    product_discount_value:'',
+    product_discount_reason:''
+
   };
 
   const handleSubmit = (values, { setSubmitting }) => {
     const formData = new FormData();
-    formData.append('product_image', values.product_image);
 
-    formData.append('product_Color', JSON.stringify([]));
+formData.append('product_image', values.product_image);
+formData.append('product_Color', JSON.stringify([]));
 formData.append('product_Size', JSON.stringify([]));
 formData.append('product_admin', values.product_admin);
 formData.append('product_category', values.product_category);
@@ -57,8 +66,12 @@ formData.append('product_old_price', values.product_old_price);
 formData.append('product_price',values.product_price);
 formData.append('product_quantity', values.product_quantity);
 formData.append('product_seen', values.product_seen);
-formData.append('product_stock', values.product_stock); // Even empty string can be appended
+formData.append('product_stock', values.product_stock); 
 formData.append('product_type', values.product_type);
+formData.append('product_tag', values.product_old_price);
+formData.append('product_soldout[]', values.product_isDiscounted);
+formData.append('product_soldout[]', values.product_discount_value);
+formData.append('product_soldout[]', values.product_discount_reason);
 
  fetch('http://localhost:4060/products/add', {
       method: 'POST',
@@ -66,7 +79,6 @@ formData.append('product_type', values.product_type);
     })
       .then(response => {
         if (response.ok) {
-          console.log('Data posted successfully');
           
         } else {
           throw new Error('Failed to post data');
@@ -193,7 +205,7 @@ formData.append('product_type', values.product_type);
           </div>
           <div  className='inputContainer'>
             <label htmlFor="product_stock">Product Stock:</label>
-            <Field type="text" name="product_stock"               className='addProductInput'
+            <Field type="text" name="product_stock" className='addProductInput'
  />
             <ErrorMessage name="product_stock" component="div" className='errorMessage'  />
           </div>
@@ -211,8 +223,31 @@ formData.append('product_type', values.product_type);
  />
             <ErrorMessage name="product_color" component="div"className='errorMessage'  />
           </div>
+
+          <div  className='inputContainer'>
+            <label htmlFor="product_tag">Product tag:</label>
+            <Field type="text" name="product_tag"               className='addProductInput'/>
+        <ErrorMessage name="product_tag" component="div"className='errorMessage'  />
+          </div>
           </div>
 
+          <div className='inputRow'>
+          <div  className='inputContainer'>
+            <label htmlFor="product_isDiscounted">has Discount:</label>
+            <Field type="checkbox" name="product_isDiscounted"className=""/>
+          </div>
+          <div  className='inputContainer'>
+            <label htmlFor="product_discount_value">Product_discount:</label>
+            <Field type="text" name="product_discount_value" className='addProductInput'/>
+            <ErrorMessage name="product_discount_value" component="div"className='errorMessage'  />
+          </div>
+
+          <div  className='inputContainer'>
+            <label htmlFor="product_discount_reason">Product reason:</label>
+            <Field type="text" name="product_discount_reason" className='addProductInput'/>
+           <ErrorMessage name="product_discount_reason" component="div"className='errorMessage'  />
+          </div>
+          </div>
           <button type="submit" disabled={false}  style={{fontFamily:'lato'}} className='btn btn-primary btn-lg w-50 m-3 bgPink border-0'>
             Submit
           </button>
