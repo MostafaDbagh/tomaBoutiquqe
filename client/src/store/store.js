@@ -3,6 +3,7 @@ import productReducer from '../redux/reducer/productReducer';
 import { persistReducer,persistStore } from 'redux-persist';
 import storage from 'redux-persist/lib/storage'; 
 import authReducer from '../redux/reducer/authReducer';
+import wishListReducer from '../redux/reducer/wishListReducer';
 
 
 
@@ -14,7 +15,8 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   product: productReducer,
-  auth:authReducer
+  auth:authReducer,
+  wishList:wishListReducer
 
 });
 

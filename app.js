@@ -16,6 +16,8 @@ const contactSupportApi = require('./api/routes/contact')
 const productApi = require('./api/routes/product')
 const orderApi = require('./api/routes/orders');
 const adminApi = require('./api/routes/adminLogin')
+const authApi = require('./api/routes/auth')
+
 
 
 
@@ -25,6 +27,7 @@ app.use('/products',productApi);
 app.use('/orders',orderApi);
 app.use("/location",locationApi)
 app.use('/admin',adminApi)
+app.use('/user',authApi)
 app.use("/",contactSupportApi)
 
 

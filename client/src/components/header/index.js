@@ -2,6 +2,8 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import basket from '../../assests/images/basket.svg'
+import wishlist from '../../assests/images/wishlist.svg'
+
 import { useSelector } from 'react-redux';
 import './index.css'
 
@@ -51,9 +53,13 @@ function Header({setShowPorductsModal,showModalProduct}) {
             <Nav.Link eventKey={2} href="#memes">
               About Us
             </Nav.Link>
-            <Nav.Link className='last-item' eventKey={2} href="#memes" style={{position:'relative'}} onClick={()=>setShowPorductsModal(true)}>
+            <Nav.Link  eventKey={2} href="#memes" style={{position:'relative'}} onClick={()=>setShowPorductsModal(true)}>
          <img src={basket} alt='ecomerce-website' width={30} height={30}  />
          <span style={{position:'absolute',width:"24px",height:'24px',background:'#E80f88',borderRadius:'50%',textAlign:'center',top:'-5px',color:'white'}}> {productNuber()}</span>
+            </Nav.Link>
+
+            <Nav.Link className='last-item' eventKey={2} href="#memes" style={{position:'relative',marginLeft:'8px'}} onClick={()=>setShowPorductsModal(true)}>
+             <img src={wishlist} alt='ecomerce-website' width={30} height={30}  />
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

@@ -1,11 +1,16 @@
 
 import { useNavigate } from "react-router-dom";
+import heart from '../../assests/images/heart.svg'
+import { useDispatch,useSelector } from "react-redux";
+import { addToWishlist } from "../../redux/reducer/wishListReducer";
 import './index.css'
 const SingleProduct = ({  productPrice, productName,productImage,productId,hasDiscount,discountValue,discountReason }) => {
 
 
-    const navigate = useNavigate()
+    const dispatch = useDispatch()
+    const wishlist  = useSelector(state =>state.wishList)
 
+    const navigate = useNavigate()
     const addProductToBasket = (id)=>{
         navigate(`/product/${id}`)
 
@@ -27,15 +32,21 @@ const SingleProduct = ({  productPrice, productName,productImage,productId,hasDi
         return data[0].slice(0,1).toUpperCase()+data[0].slice(1)         }
         return 0;
     }
+    console.log(wishlist,'wishlist')
     return (
         <>
-        {console.log(handleTag())}
         <div className="card cardMargin border-0  rounded-0 bg-.bg-secondary shadow">
+            <div className="d-flex align-items-center">
             { hasDiscount && <div className="soldout-tag" style={{
                 background : tagColor[handleTag()]
             }}>{discountReason} <br/>{discountValue} safi 
             </div>
             }
+            <button
+            onClick={()=>dispatch(addToWishlist({productId,productName,productPrice,productImage}))}
+             style={{margin:'0 8px 0 auto',borderRadius:'50%'}}><img src={heart} alt='toma-ecomerce' width={30} height={30} /> </button>
+            </div>
+      
             <div className="pt-2">
             <div className="blurry-section" style={{width:'300px',height:'160px',background:'#fff0f5',position:'relative',margin:'24px auto 16px',borderRadius:'10px'}}>
             <img src={`http://baby-bucket-product.s3.amazonaws.com/${productImage}`} 
